@@ -31,7 +31,7 @@ var requestHandler = function(req, res) {
 
 var server = http.createServer(requestHandler);
  
-var port = 10001;
+var port = 5000;
 server.listen(port, function() {
     console.log('server listening on port ' + port);
 });
