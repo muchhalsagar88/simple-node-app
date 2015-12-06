@@ -1,7 +1,10 @@
 var http = require('http'),
 	redis = require('redis');
 
-var client = redis.createClient();
+var client = redis.createClient({
+	host: process.env.REDIS_PORT_6379_TCP_ADDR,	
+	port: 6379
+});
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
