@@ -1,10 +1,7 @@
 var http = require('http'),
-	redis = require('redis-connection-pool')('myRedisPool', {
-		host: '127.0.0.1', 
-		port: 6379,  
-		max_clients: 5, 
-		database: 0, // database number to use 
-	});
+	redis = require('redis');
+
+var client = redis.createClient();
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -26,7 +23,7 @@ var requestHandler = function(req, res) {
     res.write(serveRequest());
     res.end();
     hrend = process.hrtime(hrstart);
-    redis.lpush('latency', hrend[1]/1000000);
+    client.lpush('latency', hrend[1]/1000000);
 }
 
 var server = http.createServer(requestHandler);

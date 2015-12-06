@@ -7,12 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sagar Muchhal",
-  "repository" :
-  { "type" : "git",
-    "url" : "https://github.com/npm/npm.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/npm.git"
   },
   "license": "ISC",
   "dependencies": {
-    "redis-connection-pool": "~1.2.0"
+    "redis": "~2.4.2"
   }
 }
