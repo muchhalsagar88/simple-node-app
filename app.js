@@ -12,7 +12,7 @@ function getRandomInt(min, max) {
 
 var serveRequest = function(){
 
-	var prime_number = 5743,
+	var prime_number = 100109,
 		rand_num = getRandomInt(1, 100000000);
     while(rand_num > 1000000 || rand_num % prime_number != 0)
         rand_num = getRandomInt(1, 100000000)
